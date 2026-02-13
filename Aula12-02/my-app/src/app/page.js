@@ -7,10 +7,8 @@ export default function Pagina(){
   const [clicks, setClicks] = useState(0);
   
   const contarClicks = () => {
-    setClicks(clicks + 1);
-    console.log(clicks);
-    setClicks(clicks + 1);
-    console.log(clicks);
+    setClicks(c => c + 1);
+    setClicks(c => c + 1);
   }
   return(
     <>

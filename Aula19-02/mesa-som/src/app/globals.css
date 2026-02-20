@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+.volumes{
+  display: flex;
+  gap: 20px;
+  text-align: center;
+}
+
+.volumeOn{
+  background-color: green;
+  padding: 2px;
+  border-radius: 4px;
+  margin: 0px 4px;
+}
+
+.volumeOff{
+  background-color: red;
+  padding: 4px;
+  border-radius: 4px;
+  margin: 0px 4px;
+}

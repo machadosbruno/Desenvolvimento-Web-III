@@ -1,34 +1,42 @@
 'use client'
 
-import EntradaDeSom from './entradaDeSom';
+import Grupo from "./grupo";
+import { EnergiaContext } from "./context";
 import { useState } from "react";
 
 export default function som(){
-  const microfone = document.getElementById("Mic");
-  const guitarra = document.getElementById("Gui");
-  const bateria = document.getElementById("Bat");
   const [isOn, setIsOn] = useState(false);
-      
+  const [energia, setEnergia] = useState(false)
+        
   const click = () => {
-      if(isOn){
-          setIsOn(false);
-          microfone.className = "volumeOn";
-      }
-      else{
-          setIsOn(true);
-      }
+      isOn ? setIsOn(false) : setIsOn(true);
+      isOn ? setEnergia(false) : setEnergia(true);
+      if( isOn ) { setAtivos(0); }
+  }
 
+  const [ativos, setAtivos] = useState(0);
+
+  const contar = (v) => {
+    setAtivos(p => p + v);
   }
   return (
     <>
       <h1>Volumes</h1>
-      <button className={isOn ? 'volumeOn' : 'volumeOff'} onClick={click}>On/Off
-      </button>
-      <div className="volumes">
-        <EntradaDeSom nomeEntrada="Microfone" id="Mic"/>
-        <EntradaDeSom nomeEntrada="Guitarra" id="Gui"/>
-        <EntradaDeSom nomeEntrada="Bateria" id="Bat"/>
-      </div>
+      <button className={isOn ? 'volumeOn' : 'volumeOff'} onClick={click}>On/Off</button>
+        <br></br>
+        {
+          energia && <p>Há {ativos} equipamentos ligados!</p>
+        }
+        <br></br>
+        {
+          isOn ? <div className="volumes">
+          <EnergiaContext.Provider value={{energia: energia, contar}}>
+            <Grupo />
+          </EnergiaContext.Provider>  
+          </div> : <p>Mesa de som desligada</p>
+        }
+      
+      
     </>
   )
 }

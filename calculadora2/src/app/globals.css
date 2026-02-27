@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+.visor{
+  width: 130px;
+  margin: 20px;
+
+  text-align: center;
+
+  border: 2px solid black;
+  border-radius: 5px;
+}
+.linha{
+  display: flex;
+  gap: 20px;
+
+  margin: 20px;
+}
+button{
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: gray;
+
+  color: white;
+  text-align: center;
+}

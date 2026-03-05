@@ -1,8 +1,4 @@
-import { useState } from "react";
-
-export default function Digito(){
-
-    const [valor, setValor] = useState(null);
+export default function Digito({ valor, setValor}){
 
     function handleClick(valorButton){
         if(valor === null){

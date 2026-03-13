@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+.main{
+  width: 400px;
+  margin: auto;
+}
+
+.display{
+  height: 30px;
+  width: 400px;
+  margin: 5px 0px;
+  padding: 0px 2px;
+
+  border: 2px solid gray;
+  border-radius: 5px;
+}
+
+.teclado{
+  max-width: 400px;
+}
+
+.tecla{
+  width: 30px;
+  height: 30px;
+
+  margin: 5px;
+
+  background-color: lightblue;
+  border: 2px solid blue;
+  border-radius: 5px;
+}
+
+.especiais{
+  margin: 5px;
+  padding: 5px;
+
+  background-color: lightblue;
+  border: 2px solid blue;
+  border-radius: 5px;
+}

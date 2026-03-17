@@ -48,17 +48,12 @@ export default function Teclado() {
     }
     else{
       if(v == "Space"){
-        if(visor.length > 1){
-            let final = visor.length -1;
-            let inicio = visor.length -2;
-            if(visor.substring(inicio, final) != " "){
-                setVisor(visor + " " + "");
-            }
-        }
-        else {
-            if(visor != " "){
-                setVisor(visor + " " + "");
-            }
+        if(visor.length == 0){
+          setVisor(visor + "" + " " + "");
+        } else if(visor.length == 1 && visor != " "){
+          setVisor(visor + " " + "");
+        }else{
+          setVisor(visor + " " + "");
         }
       }
       else{

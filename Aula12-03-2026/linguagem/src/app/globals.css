@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+.linha{
+  display: flex;
+  flex-direction: row;
+}

@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+.linha{
+  display: flex;
+  flex-direction: row;
+}
+
+
+.votosInativos{
+  display: inline-block;
+  text-align: center;
+
+  width: max-content;
+}
+
+.votosInativos{
+  display: none;
+}

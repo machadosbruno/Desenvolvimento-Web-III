@@ -1,0 +1,49 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Livro {
+  id            Int      @id @default(autoincrement())
+  titulo        String
+  anoPublicacao Int
+  editoraId     Int?
+  editora       Editora? @relation(fields: [editoraId], references: [id])
+}
+
+model Editora {
+  id     Int     @id @default(autoincrement())
+  nome   String  @db.VarChar(100)
+  sigla  String  @unique
+  cidade String?
+  livros Livro[]
+}
+
+model Atividade {
+  id          Int     @id @default(autoincrement())
+  realizada   Boolean @default(false)
+  titulo      String
+  
+  /*
+    Colunqa de prioridade é
+    um inteiro de 0 a 4 representando:
+    0 - Muito alta
+    1 - Alta
+    2 - Padrão
+    3 - Baixa
+    4 - Muito baixa
+  */
+  prioridade  Int
+  
+  //Opcional
+  detalhes    String?
+}

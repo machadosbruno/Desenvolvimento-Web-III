@@ -16,6 +16,7 @@ export default function Home() {
     try {
       const resultado = await Listar();
       setDados(resultado);
+      console.log(resultado);
     }
     catch {
       Swal.fire({

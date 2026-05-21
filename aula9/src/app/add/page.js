@@ -29,15 +29,18 @@ export default function Novo() {
 
         try {
             const resultado = await Salvar(data);
-            if(resultado) {
+            setBusy(false);
+            if(resultado.sucesso) {
                 Swal.fire({
-                    text: 'Atividade salva com sucesso',
+                    text: resultado.mensagem,
                     icon: 'success',
                     timer: 3000,
                     toast: true,
                     position: "top-right",
                     showConfirmButton: false
                 });
+                
+                router.push("../");
             }
         } catch {
             Swal.fire({
@@ -50,7 +53,7 @@ export default function Novo() {
             });
         }
 
-        stetBusy(p => false);
+        setBusy(p => false);
     };
     return (
         <>
@@ -63,7 +66,7 @@ export default function Novo() {
                 </div>
                 <div className="inputLabel">
                     Prioridade
-                    <select id="prioridade" name="prioridade" className="input">
+                    <select id="prioridade" name="prioridade" className="input" {...register("prioridade")}>
                         <option value="muito_alta">Muito Alta</option>
                         <option value="alta">Alta</option>
                         <option value="padrao">Padrão</option>

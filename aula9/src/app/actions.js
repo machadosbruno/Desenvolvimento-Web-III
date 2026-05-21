@@ -15,7 +15,7 @@ export async function Listar() {
 }
 
 export async function Salvar(atividade) {
-    const resultado = await prisma.editora.create({
+    const resultado = await prisma.atividade.create({
         data: atividade
     });
 

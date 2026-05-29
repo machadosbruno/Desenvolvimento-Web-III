@@ -1,0 +1,29 @@
+1) b 3 - 0
+
+2) f.  http://localhost:3000/a/c 
+   g.  http://localhost:3000/b/c
+
+3) d.  App/usuario/page.js
+
+4) a.  route.params.id <- errei
+   b.  searchParams.id <- era correta na versão antiga
+
+5) C <- errei | correta -> S
+   C <- acertei
+   A <- acertei
+   A <- errei | correta -> C
+   S <- acertei
+
+6) e <- errei 
+   b <- certa
+
+7) c <- errei
+   e <- certa
+
+8) nenhuma <- errei
+   3 <- certa
+
+9) d
+
+10) c <- errei
+    b <- correta
